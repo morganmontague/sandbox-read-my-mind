@@ -12,11 +12,11 @@ let containerArea = document.createElement('div');
 containerTag.appendChild(containerArea)
 containerArea.setAttribute('Class', 'container')
 containerArea.setAttribute('id', 'boxStop')
-containerArea.innerText = 'affadsfasdfdf'
+containerArea.innerText = 'affadsfasdfd'
 let header = document.getElementById('boxStop');
 let h1Section = document.createElement('h1');
 header.appendChild(h1Section);
-h1Section.innerText=spaceBun.page0;
+// h1Section.innerText=spaceBun.page0;
 h1Section.setAttribute('id', 'h1ID')
 let changeUp = document.getElementById('h1ID')
 let newButton = document.createElement('button')
@@ -40,12 +40,12 @@ else {h1Section.innerText = 'broke'}
 let helpArea = document.getElementById('boxStop');
 let helpTag = document.createElement('div');
 helpArea.appendChild(helpTag);
-helpTag.innerText = 'Inner Text is working';
+// helpTag.innerText = 'Inner Text is working';
 helpTag.setAttribute('Id', 'helpText')
 let extraArea = document.getElementById('boxStop');
 let extraTag = document.createElement('div');
 extraArea.appendChild(extraTag);
-extraTag.innerText='extra text here';
+// extraTag.innerText='extra text here';
 extraTag.setAttribute('Id', 'extraText')
 let circleArea = document.getElementById('boxStop');
 let circleTag = document.createElement('button');
@@ -53,6 +53,7 @@ circleArea.appendChild(circleTag);
 circleTag.setAttribute('Id','resetGo');
 let circleButton = document.getElementById('resetGo');
 circleButton.innerText='Go or Reset'
+
 
 
 let state = {
@@ -106,8 +107,45 @@ let state = {
             circleButton: 'Reset',
         },
     ],
-    symbols: ['symbols here'],
+    symbols: ['!','@','$','#','%','^','&','*','('],
     answer: 'function',
     pageNumber: [0,1,2,3,4,5],
-    functions: ['functions']
+    functions: ['']
 }
+
+function randomize() {
+    // let symbolArray = state.symbols.sort((a,b)=> .5 - Math.random()) This is for if you have more time
+        let symbolArray = state.symbols
+        console.log(symbolArray)
+        let mover =symbolArray.splice([1])
+        symbolArray.push(mover)
+        return console.log(symbolArray), console.log(mover)
+    }; 
+    
+    let addOne = 0
+
+    function testingStuff (){
+        circleButton.innerText=`${state.pages[addOne].circleButton}`
+        newButton.innerHTML = `${state.pages[addOne].nextButton}`
+        h1Section.innerText = `${state.pages[addOne].headerText}`
+        extraTag.innerText = `${state.pages[addOne].extraText}`
+        helpTag.innerText = `${state.pages[addOne].helpText}`
+    }
+    
+    
+    circleButton.addEventListener('click',() => {
+        addOne=addOne+1
+        console.log(addOne)
+        setInterval(testingStuff, 1000)
+    return addOne
+}
+)
+randomize()
+
+console.log(`${state.pages[addOne].helpText}`)
+
+window.onload = (event) => {
+    console.log('page is fully loaded');
+  };
+  
+  circleButton.style.hidden
