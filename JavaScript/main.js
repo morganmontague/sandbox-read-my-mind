@@ -55,3 +55,59 @@ let circleButton = document.getElementById('resetGo');
 circleButton.innerText='Go or Reset'
 
 
+let state = {
+    pages: [
+        {
+            pageNumber: 0,
+            headerText: 'I can read your mind',
+            nextButton: '',
+            helpText: '',
+            extraText: '',
+            circleButton: 'Go',
+        },
+        {
+            pageNumber: 1,
+            headerText: 'Pick a number from 01 - 99',
+            nextButton: 'Next',
+            helpText: 'When you have your number, click next',
+            extraText: '',
+            circleButton: 'Reset',
+        },
+        {
+            pageNumber: 2,
+            headerText: 'Add both Digets together to get a new number',
+            nextButton: 'Next',
+            helpText: 'Ex: 14 is 1 + 4 =5',
+            extraText: 'Click next to proceed',
+            circleButton: 'Reset',
+        },
+        {
+            pageNumber: 3,
+            headerText: 'Subtract your new number from the original number',
+            nextButton: 'Next',
+            helpText: 'Ex: 14-5 = 9',
+            extraText: 'Click next to proceed',
+            circleButton: 'Reset',
+        },
+        {
+            pageNumber: 4,
+            headerText: 'Symbols',
+            nextButton: 'Reveal',
+            helpText: 'Find your new number',
+            extraText: 'Note the symbol besides the number',
+            circleButton: 'Reset',
+        },
+        {
+            pageNumber: 5,
+            headerText: 'Answer Symbol',
+            nextButton: '',
+            helpText: 'Your symbol is',
+            extraText: 'answer symbol',
+            circleButton: 'Reset',
+        },
+    ],
+    symbols: ['symbols here'],
+    answer: 'function',
+    pageNumber: [0,1,2,3,4,5],
+    functions: ['functions']
+}
