@@ -3,6 +3,9 @@ spaceBun = {
     page1 : 'Haha I read your mind... wait',
     page2 : 'No you beat me'
 }
+let bodyBack = document.querySelector('body')
+bodyBack.setAttribute('class', 'p-3 mb-2 bg-success text-white')
+
 let header = document.getElementById('headerText');
 let h1Section = document.createElement('h1');
 header.appendChild(h1Section);
